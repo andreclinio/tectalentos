@@ -1,10 +1,10 @@
-import { AngularEssentialsPage } from './app.po';
+import { TecTalentosPage } from './app.po';
 
-describe('angular-essentials App', () => {
-  let page: AngularEssentialsPage;
+describe('tec-talentos App', () => {
+  let page: TecTalentosPage;
 
   beforeEach(() => {
-    page = new AngularEssentialsPage();
+    page = new TecTalentosPage();
   });
 
   it('should display welcome message', () => {

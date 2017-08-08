@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+
+    <div class="login-absolute-center-small panel panel-body">
+      <div id="logo-container"></div>
+      <div class="col-sm-12 col-md-10 col-md-offset-1">
+
+        <tt-big-logo></tt-big-logo>
+
+        <form #form="ngForm" name="loginForm" ngDefaultControl ngModel novalidate>
+          <h1>Login no Sistema</h1>
+
+          <div class="form-group input-group" [class.has-error]="!isOK(email)" [class.has-feedback]="!isOK(email)">
+            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+            <input class="form-control" [(ngModel)]="user.email" type="email" name='email' tt-email-tecgraf placeholder="Email do usuário"
+              #email="ngModel" required email/>
+          </div>
+          <div *ngIf="!isOK(email)" class="alert alert-danger">Entre com um email válido!</div>
+
+          <div class="form-group input-group" [class.has-error]="!isOK(pwd)" [class.has-feedback]="!isOK(pwd)">
+            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+            <input class="form-control" [(ngModel)]="user.password" [type]="options.showPassword ? 'text' : 'password'" name='password' 
+              placeholder="Senha" #pwd="ngModel" required/>
+          </div>
+          <div *ngIf="!isOK(pwd)" class="alert alert-danger">Entre com a senha!</div>
+          
+          <div class="form-group pull-right">
+            <a (click)="recover()">Esqueci a senha!</a>
+          </div>
+
+          <div class="checkbox">
+            <label>
+              <input [(ngModel)]="options.remember" type="checkbox" name="remember">Lembre-se de mim
+            </label>
+          </div>
+
+          <div class="checkbox">
+            <label>
+              <input [(ngModel)]="options.showPassword" type="checkbox" name="showPassword"/> Mostrar senha
+            </label>
+          </div>
+
+          <div class="form-group text-center">
+            <button [disabled]="!form.valid" type="button" class="btn btn-primary" (click)="login()">Login</button>
+          </div>
+
+
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</div>

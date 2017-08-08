@@ -1,0 +1,7 @@
+#logo-container{
+    margin: auto;
+    margin-bottom: 10px;
+    width:227px;
+    height:222px;
+    background: url('../../../../assets/images/tecgraf-intro-logo.jpg') no-repeat;
+}

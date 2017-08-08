@@ -1,0 +1,10 @@
+  <nav class="navbar navbar-default">
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li *ngFor="let m of menuItems" class="nav-item" routerLinkActive="active" [routerLink]="[m.path]">
+          <a>{{m.title}}</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
