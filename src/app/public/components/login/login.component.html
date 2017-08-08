@@ -1,14 +1,11 @@
 <div class="container">
   <div class="row">
-
-    <div class="login-absolute-center-small panel panel-body">
-      <div id="logo-container"></div>
-      <div class="col-sm-12 col-md-10 col-md-offset-1">
+    <div class="panel panel-body">
 
         <tt-big-logo></tt-big-logo>
+        <h1>Login no Sistema</h1>
 
         <form #form="ngForm" name="loginForm" ngDefaultControl ngModel novalidate>
-          <h1>Login no Sistema</h1>
 
           <div class="form-group input-group" [class.has-error]="!isOK(email)" [class.has-feedback]="!isOK(email)">
             <span class="input-group-addon"><i class="fa fa-user"></i></span>
@@ -24,8 +21,8 @@
           </div>
           <div *ngIf="!isOK(pwd)" class="alert alert-danger">Entre com a senha!</div>
           
-          <div class="form-group pull-right">
-            <a (click)="recover()">Esqueci a senha!</a>
+          <div class="form-group text-right">
+            <a (click)="recover(user.email)">Esqueci a senha!</a>
           </div>
 
           <div class="checkbox">
@@ -40,15 +37,13 @@
             </label>
           </div>
 
-          <div class="form-group text-center">
-            <button [disabled]="!form.valid" type="button" class="btn btn-primary" (click)="login()">Login</button>
+          <div class="form-group text-right">
+            <button [disabled]="!form.valid" type="button" class="btn btn-primary" (click)="login()">Entrar no sistema</button>
           </div>
 
 
         </form>
 
-      </div>
     </div>
-
   </div>
 </div>

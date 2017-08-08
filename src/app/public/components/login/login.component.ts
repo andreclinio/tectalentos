@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component,  OnInit,  Input,  Output,  ViewChild} from '@angular/core';
 import { FormGroup,  FormControl,  Validators,  FormBuilder} from '@angular/forms';
 
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
     password: "1234"
   }
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   private isOK(control) {
     return control.valid || !control.touched
@@ -32,14 +33,13 @@ export class LoginComponent implements OnInit {
     console.log("login", this.user);
     if (!this.userService.hasUser(this.user.email)) {
       console.log("No user");
+      return;
     }
+    this.router.navigate(['main/profile-main']);
   }
 
-  private register() {
-    console.log("register");
-  }
-
-  private recover() {
-    console.log("recover");
+  private recover(email) {
+    console.log("recover", email);
+    this.router.navigate(['home/recover'], email );
   }
 }

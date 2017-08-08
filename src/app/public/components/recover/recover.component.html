@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+      <div class="panel panel-body">
+  
+          <tt-big-logo></tt-big-logo>
+          <h1>Recuperação de Senha</h1>
+  
+           <form #form="ngForm" name="recoverForm" ngDefaultControl ngModel novalidate>
+  
+            <div class="form-group input-group" [class.has-error]="!isOK(eml)" [class.has-feedback]="!isOK(eml)">
+              <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+               <input class="form-control" [(ngModel)]="email" type="email" name='email' tt-email-tecgraf placeholder="Email do usuário"
+                #eml="ngModel" required email/> 
+            </div>
+             <div *ngIf="!isOK(eml)" class="alert alert-danger">Entre com um email válido!</div> 
+  
+             <div class="form-group text-right">
+               <button type="button" class="btn btn-default" routerLink="/home/login">Cancelar</button>
+              <button [disabled]="!form.valid" type="button" class="btn btn-primary" (click)="recover()">Recuperar</button>
+            </div> 
+  
+  
+          </form>
+   
+      </div>
+    </div>
+  </div>
+  

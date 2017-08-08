@@ -17,7 +17,7 @@ import { publicRoutes } from '../public/public.routing.module';
 import { AppComponent } from '../app.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: "home", pathMatch: 'full' },
+  { path: '', redirectTo: "home/intro", pathMatch: 'full' },
   { path: 'logged', redirectTo: "main", pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
@@ -27,7 +27,7 @@ const appRoutes: Routes = [
     CommonModule,
     PublicRoutingModule,
     SharedRoutingModule,
-    RouterModule.forRoot(appRoutes, {useHash: true, enableTracing: true})
+    RouterModule.forRoot(appRoutes, {useHash: true, enableTracing: false})
   ],
   exports: [],
   declarations: []

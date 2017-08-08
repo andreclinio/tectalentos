@@ -11,8 +11,9 @@ import { MenuRouteInfo } from '../../../shared/models/menu-route-info';
 export class HomeHeaderComponent implements OnInit {
 
   public menuItems: MenuRouteInfo[] = [
-    { path: 'login', title: 'Login', icon: 'x' },
-    { path: 'register',  title: 'Cadastro', icon: 'register' }
+    { path: 'intro', title: 'Home', icon: 'home' },
+    { path: 'login', title: 'Login', icon: 'sign-in' },
+    { path: 'register',  title: 'Cadastro', icon: 'user-plus' }
   ];
 
   constructor() {}

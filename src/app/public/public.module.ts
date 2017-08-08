@@ -11,6 +11,8 @@ import { HomeComponent } from './components/home/home.component';
 import { HomeHeaderComponent } from './components/home-header/home-header.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { BigLogoComponent } from './components/big-logo/big-logo.component';
+import { IntroComponent } from './components/intro/intro.component';
+import { RecoverComponent } from './components/recover/recover.component';
 
 @NgModule({
   imports: [
@@ -20,7 +22,7 @@ import { BigLogoComponent } from './components/big-logo/big-logo.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [LoginComponent, RegisterComponent, HomeComponent, HomeHeaderComponent, PageNotFoundComponent, BigLogoComponent],
+  declarations: [LoginComponent, RegisterComponent, HomeComponent, HomeHeaderComponent, PageNotFoundComponent, BigLogoComponent, IntroComponent, RecoverComponent],
   exports: [HomeComponent, PageNotFoundComponent],
 })
 export class PublicModule { }

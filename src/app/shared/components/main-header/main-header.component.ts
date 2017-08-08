@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { MenuRouteInfo } from '../../../shared/models/menu-route-info';
 
@@ -15,7 +16,11 @@ export class MainHeaderComponent implements OnInit {
     { path: 'skills-main',  title: 'Competências', icon: 'trophy' }
   ];
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  public logout() {
+    this.router.navigate(['/']);
+  }
 
   ngOnInit() {
   }
