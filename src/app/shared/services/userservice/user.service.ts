@@ -12,8 +12,12 @@ export class UserService {
     return false;
   }
 
-  public checkPassword( email: string, password: string) : boolean {
-    return true;
+  public checkPassword(email: string, password: string) : boolean {
+    if (email === "clinio@tecgraf.puc-rio.br" && password === "1234") return true;
+    return false;
   }
 
+  public hasLoggedUser() : boolean {
+     return true;
+  }
 }

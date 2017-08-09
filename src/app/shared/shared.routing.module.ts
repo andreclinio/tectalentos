@@ -10,10 +10,13 @@ import { MainFooterComponent } from '../shared/components/main-footer/main-foote
 
 import { ProfileMainComponent } from '../profile/components/profile-main/profile-main.component';
 
+import { AuthGuard } from './guards/auth-guard/auth.guard';
+
 
 export const sharedRoutes: Routes = [
   { path: 'main', 
     component: MainPageComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: 'profile-main', component: ProfileMainComponent },
     ]
